@@ -26,7 +26,7 @@
     if (!root.PhonebookApi) {
       root.PhonebookApi = {};
     }
-    root.PhonebookApi.PhoneNumberSubmittedToBlacklist = factory(root.PhonebookApi.ApiClient);
+    root.PhonebookApi.NumberToBlacklist = factory(root.PhonebookApi.ApiClient);
   }
 }(this, function(ApiClient) {
   'use strict';
@@ -34,17 +34,16 @@
 
 
   /**
-   * The PhoneNumberSubmittedToBlacklist model module.
-   * @module model/PhoneNumberSubmittedToBlacklist
+   * The NumberToBlacklist model module.
+   * @module model/NumberToBlacklist
    * @version 0.0.1
    */
 
   /**
-   * Constructs a new <code>PhoneNumberSubmittedToBlacklist</code>.
-   * Phone number in e.164 format
-   * @alias module:model/PhoneNumberSubmittedToBlacklist
+   * Constructs a new <code>NumberToBlacklist</code>.
+   * @alias module:model/NumberToBlacklist
    * @class
-   * @param phoneNumber {String} 
+   * @param phoneNumber {String} Phone number in e.164 format
    */
   var exports = function(phoneNumber) {
     var _this = this;
@@ -53,11 +52,11 @@
   };
 
   /**
-   * Constructs a <code>PhoneNumberSubmittedToBlacklist</code> from a plain JavaScript object, optionally creating a new instance.
+   * Constructs a <code>NumberToBlacklist</code> from a plain JavaScript object, optionally creating a new instance.
    * Copies all relevant properties from <code>data</code> to <code>obj</code> if supplied or a new instance if not.
    * @param {Object} data The plain JavaScript object bearing properties of interest.
-   * @param {module:model/PhoneNumberSubmittedToBlacklist} obj Optional instance to populate.
-   * @return {module:model/PhoneNumberSubmittedToBlacklist} The populated <code>PhoneNumberSubmittedToBlacklist</code> instance.
+   * @param {module:model/NumberToBlacklist} obj Optional instance to populate.
+   * @return {module:model/NumberToBlacklist} The populated <code>NumberToBlacklist</code> instance.
    */
   exports.constructFromObject = function(data, obj) {
     if (data) {
@@ -70,6 +69,7 @@
   }
 
   /**
+   * Phone number in e.164 format
    * @member {String} phoneNumber
    */
   exports.prototype['phoneNumber'] = undefined;

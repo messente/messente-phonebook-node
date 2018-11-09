@@ -11,7 +11,7 @@ Method | HTTP request | Description
 
 <a name="addToBlacklist"></a>
 # **addToBlacklist**
-> addToBlacklist(opts)
+> addToBlacklist(numberToBlacklist)
 
 
 
@@ -28,9 +28,7 @@ basicAuth.username = 'YOUR USERNAME';
 basicAuth.password = 'YOUR PASSWORD';
 
 var apiInstance = new PhonebookApi.BlacklistApi();
-var opts = {
-  'phoneNumberSubmittedToBlacklist': new PhonebookApi.PhoneNumberSubmittedToBlacklist() // PhoneNumberSubmittedToBlacklist | 
-};
+var numberToBlacklist = new PhonebookApi.NumberToBlacklist(); // NumberToBlacklist | Phone number to be blacklisted
 var callback = function(error, data, response) {
   if (error) {
     console.error(error);
@@ -38,14 +36,14 @@ var callback = function(error, data, response) {
     console.log('API called successfully.');
   }
 };
-apiInstance.addToBlacklist(opts, callback);
+apiInstance.addToBlacklist(numberToBlacklist, callback);
 ```
 
 ### Parameters
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **phoneNumberSubmittedToBlacklist** | [**PhoneNumberSubmittedToBlacklist**](PhoneNumberSubmittedToBlacklist.md)|  | [optional] 
+ **numberToBlacklist** | [**NumberToBlacklist**](NumberToBlacklist.md)| Phone number to be blacklisted | 
 
 ### Return type
 

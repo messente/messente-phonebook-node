@@ -17,18 +17,18 @@
 (function(root, factory) {
   if (typeof define === 'function' && define.amd) {
     // AMD. Register as an anonymous module.
-    define(['ApiClient', 'model/ErrorResponse', 'model/FetchBlacklistSuccess', 'model/PhoneNumberSubmittedToBlacklist'], factory);
+    define(['ApiClient', 'model/ErrorResponse', 'model/FetchBlacklistSuccess', 'model/NumberToBlacklist'], factory);
   } else if (typeof module === 'object' && module.exports) {
     // CommonJS-like environments that support module.exports, like Node.
-    module.exports = factory(require('../ApiClient'), require('../model/ErrorResponse'), require('../model/FetchBlacklistSuccess'), require('../model/PhoneNumberSubmittedToBlacklist'));
+    module.exports = factory(require('../ApiClient'), require('../model/ErrorResponse'), require('../model/FetchBlacklistSuccess'), require('../model/NumberToBlacklist'));
   } else {
     // Browser globals (root is window)
     if (!root.PhonebookApi) {
       root.PhonebookApi = {};
     }
-    root.PhonebookApi.BlacklistApi = factory(root.PhonebookApi.ApiClient, root.PhonebookApi.ErrorResponse, root.PhonebookApi.FetchBlacklistSuccess, root.PhonebookApi.PhoneNumberSubmittedToBlacklist);
+    root.PhonebookApi.BlacklistApi = factory(root.PhonebookApi.ApiClient, root.PhonebookApi.ErrorResponse, root.PhonebookApi.FetchBlacklistSuccess, root.PhonebookApi.NumberToBlacklist);
   }
-}(this, function(ApiClient, ErrorResponse, FetchBlacklistSuccess, PhoneNumberSubmittedToBlacklist) {
+}(this, function(ApiClient, ErrorResponse, FetchBlacklistSuccess, NumberToBlacklist) {
   'use strict';
 
   /**
@@ -58,13 +58,16 @@
 
     /**
      * Adds a phone number to the blacklist.
-     * @param {Object} opts Optional parameters
-     * @param {module:model/PhoneNumberSubmittedToBlacklist} opts.phoneNumberSubmittedToBlacklist 
+     * @param {module:model/NumberToBlacklist} numberToBlacklist Phone number to be blacklisted
      * @param {module:api/BlacklistApi~addToBlacklistCallback} callback The callback function, accepting three arguments: error, data, response
      */
-    this.addToBlacklist = function(opts, callback) {
-      opts = opts || {};
-      var postBody = opts['phoneNumberSubmittedToBlacklist'];
+    this.addToBlacklist = function(numberToBlacklist, callback) {
+      var postBody = numberToBlacklist;
+
+      // verify the required parameter 'numberToBlacklist' is set
+      if (numberToBlacklist === undefined || numberToBlacklist === null) {
+        throw new Error("Missing the required parameter 'numberToBlacklist' when calling addToBlacklist");
+      }
 
 
       var pathParams = {

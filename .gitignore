@@ -68,3 +68,6 @@ typings/
 
 # Intellij
 .idea
+
+.openapi-*
+git_push.sh

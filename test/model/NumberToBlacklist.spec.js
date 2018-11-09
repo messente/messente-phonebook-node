@@ -31,7 +31,7 @@
   var instance;
 
   beforeEach(function() {
-    instance = new PhonebookApi.PhoneNumberSubmittedToBlacklist();
+    instance = new PhonebookApi.NumberToBlacklist();
   });
 
   var getProperty = function(object, getter, property) {
@@ -50,16 +50,16 @@
       object[property] = value;
   }
 
-  describe('PhoneNumberSubmittedToBlacklist', function() {
-    it('should create an instance of PhoneNumberSubmittedToBlacklist', function() {
-      // uncomment below and update the code to test PhoneNumberSubmittedToBlacklist
-      //var instance = new PhonebookApi.PhoneNumberSubmittedToBlacklist();
-      //expect(instance).to.be.a(PhonebookApi.PhoneNumberSubmittedToBlacklist);
+  describe('NumberToBlacklist', function() {
+    it('should create an instance of NumberToBlacklist', function() {
+      // uncomment below and update the code to test NumberToBlacklist
+      //var instance = new PhonebookApi.NumberToBlacklist();
+      //expect(instance).to.be.a(PhonebookApi.NumberToBlacklist);
     });
 
     it('should have the property phoneNumber (base name: "phoneNumber")', function() {
       // uncomment below and update the code to test the property phoneNumber
-      //var instance = new PhonebookApi.PhoneNumberSubmittedToBlacklist();
+      //var instance = new PhonebookApi.NumberToBlacklist();
       //expect(instance).to.be();
     });
 

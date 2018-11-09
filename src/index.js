@@ -17,12 +17,12 @@
 (function(factory) {
   if (typeof define === 'function' && define.amd) {
     // AMD. Register as an anonymous module.
-    define(['ApiClient', 'model/ErrorItem', 'model/ErrorResponse', 'model/FetchBlacklistSuccess', 'model/PhoneNumberSubmittedToBlacklist', 'model/ResponseErrorCode', 'model/ResponseErrorTitle', 'api/BlacklistApi'], factory);
+    define(['ApiClient', 'model/ErrorItem', 'model/ErrorResponse', 'model/FetchBlacklistSuccess', 'model/NumberToBlacklist', 'model/ResponseErrorCode', 'model/ResponseErrorTitle', 'api/BlacklistApi'], factory);
   } else if (typeof module === 'object' && module.exports) {
     // CommonJS-like environments that support module.exports, like Node.
-    module.exports = factory(require('./ApiClient'), require('./model/ErrorItem'), require('./model/ErrorResponse'), require('./model/FetchBlacklistSuccess'), require('./model/PhoneNumberSubmittedToBlacklist'), require('./model/ResponseErrorCode'), require('./model/ResponseErrorTitle'), require('./api/BlacklistApi'));
+    module.exports = factory(require('./ApiClient'), require('./model/ErrorItem'), require('./model/ErrorResponse'), require('./model/FetchBlacklistSuccess'), require('./model/NumberToBlacklist'), require('./model/ResponseErrorCode'), require('./model/ResponseErrorTitle'), require('./api/BlacklistApi'));
   }
-}(function(ApiClient, ErrorItem, ErrorResponse, FetchBlacklistSuccess, PhoneNumberSubmittedToBlacklist, ResponseErrorCode, ResponseErrorTitle, BlacklistApi) {
+}(function(ApiClient, ErrorItem, ErrorResponse, FetchBlacklistSuccess, NumberToBlacklist, ResponseErrorCode, ResponseErrorTitle, BlacklistApi) {
   'use strict';
 
   /**
@@ -78,10 +78,10 @@
      */
     FetchBlacklistSuccess: FetchBlacklistSuccess,
     /**
-     * The PhoneNumberSubmittedToBlacklist model constructor.
-     * @property {module:model/PhoneNumberSubmittedToBlacklist}
+     * The NumberToBlacklist model constructor.
+     * @property {module:model/NumberToBlacklist}
      */
-    PhoneNumberSubmittedToBlacklist: PhoneNumberSubmittedToBlacklist,
+    NumberToBlacklist: NumberToBlacklist,
     /**
      * The ResponseErrorCode model constructor.
      * @property {module:model/ResponseErrorCode}
