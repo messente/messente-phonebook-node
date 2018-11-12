@@ -82,7 +82,6 @@ basicAuth.username = 'YOUR_MESSENTE_API_USERNAME';
 basicAuth.password = 'YOUR_MESSENTE_API_PASSWORD';
 
 const api = new PhonebookApi.BlacklistApi();
-const numberToBlacklist = new PhonebookApi.NumberToBlacklist('+37255555555');
 
 const callback = function(error, _, response) {
     if (error) {
@@ -93,7 +92,7 @@ const callback = function(error, _, response) {
   };
 
 api.fetchBlacklist(callback);
-// api.addToBlacklist(numberToBlacklist, callback);
+// api.addToBlacklist({phoneNumber: '+37255555555'}, callback);
 // api.removeFromBlacklist('+37255555555', callback);
 ```
 
