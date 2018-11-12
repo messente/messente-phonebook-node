@@ -83,7 +83,7 @@ basicAuth.password = 'YOUR_MESSENTE_API_PASSWORD';
 
 const api = new PhonebookApi.BlacklistApi();
 
-const callback = function(error, _, response) {
+const callback = function(error, data, response) {
     if (error) {
       console.error(error);
     } else {
