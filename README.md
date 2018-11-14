@@ -85,7 +85,7 @@ const api = new PhonebookApi.BlacklistApi();
 
 const callback = function(error, data, response) {
     if (error) {
-      console.error(error);
+      console.error(error['response']['body']);
     } else {
       console.log('API called successfully. \n', response.body);
     }
