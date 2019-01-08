@@ -6,6 +6,7 @@ Method | HTTP request | Description
 ------------- | ------------- | -------------
 [**addToBlacklist**](BlacklistApi.md#addToBlacklist) | **POST** /phonebook/blacklist | 
 [**fetchBlacklist**](BlacklistApi.md#fetchBlacklist) | **GET** /phonebook/blacklist | 
+[**isBlacklisted**](BlacklistApi.md#isBlacklisted) | **GET** /phonebook/blacklist/{phone_number} | 
 [**removeFromBlacklist**](BlacklistApi.md#removeFromBlacklist) | **DELETE** /phonebook/blacklist/{phone_number} | 
 
 
@@ -103,6 +104,55 @@ This endpoint does not need any parameter.
  - **Content-Type**: Not defined
  - **Accept**: application/json
 
+<a name="isBlacklisted"></a>
+# **isBlacklisted**
+> isBlacklisted(phoneNumber)
+
+
+
+Checks if a phone number is blacklisted.
+
+### Example
+```javascript
+var PhonebookApi = require('phonebook_api');
+var defaultClient = PhonebookApi.ApiClient.instance;
+
+// Configure HTTP basic authorization: basicAuth
+var basicAuth = defaultClient.authentications['basicAuth'];
+basicAuth.username = 'YOUR USERNAME';
+basicAuth.password = 'YOUR PASSWORD';
+
+var apiInstance = new PhonebookApi.BlacklistApi();
+var phoneNumber = "phoneNumber_example"; // String | A phone number
+var callback = function(error, data, response) {
+  if (error) {
+    console.error(error);
+  } else {
+    console.log('API called successfully.');
+  }
+};
+apiInstance.isBlacklisted(phoneNumber, callback);
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **phoneNumber** | **String**| A phone number | 
+
+### Return type
+
+null (empty response body)
+
+### Authorization
+
+[basicAuth](../README.md#basicAuth)
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: application/json
+
 <a name="removeFromBlacklist"></a>
 # **removeFromBlacklist**
 > removeFromBlacklist(phoneNumber)
@@ -122,7 +172,7 @@ basicAuth.username = 'YOUR USERNAME';
 basicAuth.password = 'YOUR PASSWORD';
 
 var apiInstance = new PhonebookApi.BlacklistApi();
-var phoneNumber = "phoneNumber_example"; // String | The phone number to be deleted
+var phoneNumber = "phoneNumber_example"; // String | A phone number
 var callback = function(error, data, response) {
   if (error) {
     console.error(error);
@@ -137,7 +187,7 @@ apiInstance.removeFromBlacklist(phoneNumber, callback);
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **phoneNumber** | **String**| The phone number to be deleted | 
+ **phoneNumber** | **String**| A phone number | 
 
 ### Return type
 
