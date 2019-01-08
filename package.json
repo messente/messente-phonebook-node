@@ -1,6 +1,6 @@
 {
   "name": "phonebook_api",
-  "version": "0.0.3",
+  "version": "0.2.0",
   "description": "RESTful_API_for_Messente_phonebook",
   "license": "Apache 2.0",
   "main": "src/index.js",
