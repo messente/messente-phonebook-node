@@ -93,6 +93,7 @@ const callback = function(error, data, response) {
 
 api.fetchBlacklist(callback);
 // api.addToBlacklist({phoneNumber: '+37255555555'}, callback);
+// api.isBlacklisted('+37255555555', callback)
 // api.removeFromBlacklist('+37255555555', callback);
 ```
 
@@ -104,6 +105,7 @@ Class | Method | HTTP request |
 ------------ | ------------- | ------------- |
 *PhonebookApi.BlacklistApi* | [**addToBlacklist**](docs/BlacklistApi.md#addToBlacklist) | **POST** /phonebook/blacklist |
 *PhonebookApi.BlacklistApi* | [**fetchBlacklist**](docs/BlacklistApi.md#fetchBlacklist) | **GET** /phonebook/blacklist |
+*PhonebookApi.BlacklistApi* | [**isBlacklisted**](docs/BlacklistApi.md#isBlacklisted) | **GET** /phonebook/blacklist/{phone_number} |
 *PhonebookApi.BlacklistApi* | [**removeFromBlacklist**](docs/BlacklistApi.md#removeFromBlacklist) | **DELETE** /phonebook/blacklist/{phone_number} |
 
 ## Documentation for Models
