@@ -69,7 +69,7 @@
         obj['lastName'] = ApiClient.convertToType(data['lastName'], 'String');
       }
       if (data.hasOwnProperty('company')) {
-        obj['company'] = ApiClient.convertToType(data['company'], 'Number');
+        obj['company'] = ApiClient.convertToType(data['company'], 'String');
       }
       if (data.hasOwnProperty('title')) {
         obj['title'] = ApiClient.convertToType(data['title'], 'String');
@@ -103,7 +103,7 @@
    */
   exports.prototype['lastName'] = undefined;
   /**
-   * @member {Number} company
+   * @member {String} company
    */
   exports.prototype['company'] = undefined;
   /**

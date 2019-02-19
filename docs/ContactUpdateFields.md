@@ -6,7 +6,7 @@ Name | Type | Description | Notes
 **email** | **String** |  | [optional] 
 **firstName** | **String** |  | [optional] 
 **lastName** | **String** |  | [optional] 
-**company** | **Number** |  | [optional] 
+**company** | **String** |  | [optional] 
 **title** | **String** |  | [optional] 
 **custom** | **String** |  | [optional] 
 **custom2** | **String** |  | [optional] 
