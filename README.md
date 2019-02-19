@@ -81,7 +81,9 @@ const basicAuth = defaultClient.authentications['basicAuth'];
 basicAuth.username = 'YOUR_MESSENTE_API_USERNAME';
 basicAuth.password = 'YOUR_MESSENTE_API_PASSWORD';
 
-const api = new PhonebookApi.BlacklistApi();
+const blacklist = new PhonebookApi.BlacklistApi();
+const groups = new PhonebookApi.GroupsApi();
+const contacts = new PhonebookApi.ContactsApi();
 
 const callback = function(error, data, response) {
     if (error) {
@@ -91,10 +93,37 @@ const callback = function(error, data, response) {
     }
   };
 
-api.fetchBlacklist(callback);
-// api.addToBlacklist({phoneNumber: '+37255555555'}, callback);
-// api.isBlacklisted('+37255555555', callback)
-// api.removeFromBlacklist('+37255555555', callback);
+// blacklist.addToBlacklist({phoneNumber: 'SOME_PHONE'}, callback);
+// blacklist.fetchBlacklist(callback);
+// blacklist.isBlacklisted('SOME_PHONE', callback);
+// blacklist.removeFromBlacklist('SOME_PHONE', callback);
+
+// groups.createGroup({'name': 'SOME_NAME'}, callback);
+// groups.deleteGroup('SOME_GROUP_UUID', callback);
+// groups.fetchGroup('SOME_GROUP_UUID', callback);
+// groups.fetchGroups(callback);
+// groups.updateGroup('SOME_GROUP_UUID', {'name': 'SOME_NAME'}, callback);
+
+// contacts.addContactToGroup('SOME_GROUP_UUID', 'SOME_PHONE', callback);
+// contacts.createContact(
+//   {
+//       phoneNumber: 'SOME_PHONE',
+//       email: 'SOME EMAIL',
+//       firstName: 'SOME FIRST NAME',
+//       lastName: 'SOME LAST NAME',
+//       company: 'SOME COMPANY',
+//       title: 'SOME TITLE',
+//       custom: 'SOME CUSTOM',
+//       custom2: 'SOME CUSTOM2',
+//       custom3: 'SOME CUSTOM3',
+//       custom4: 'SOME CUSTOM4'
+//   }, callback);
+// contacts.deleteContact('SOME_PHONE', callback);
+// contacts.fetchContact('SOME_PHONE', callback);
+// contacts.fetchContactGroups('SOME_PHONE', callback);
+// contacts.fetchContacts({}, callback);
+// contacts.fetchContacts({groupIds: ['SOME_GROUP_UUID', 'SOME_OTHER_GROUP_UUID']}, callback);
+// contacts.removeContactFromGroup('SOME_GROUP_UUID', 'SOME_PHONE', callback);
 ```
 
 ## Documentation for API Endpoints
@@ -103,23 +132,23 @@ All URIs are relative to *https://api.messente.com/v1/phonebook*
 
 Class | Method | HTTP request | Description
 ------------ | ------------- | ------------- | -------------
-*PhonebookApi.BlacklistApi* | [**addToBlacklist**](docs/BlacklistApi.md#addToBlacklist) | **POST** /blacklist | 
-*PhonebookApi.BlacklistApi* | [**fetchBlacklist**](docs/BlacklistApi.md#fetchBlacklist) | **GET** /blacklist | 
-*PhonebookApi.BlacklistApi* | [**isBlacklisted**](docs/BlacklistApi.md#isBlacklisted) | **GET** /blacklist/{phone} | 
-*PhonebookApi.BlacklistApi* | [**removeFromBlacklist**](docs/BlacklistApi.md#removeFromBlacklist) | **DELETE** /blacklist/{phone} | 
-*PhonebookApi.ContactsApi* | [**addContactToGroup**](docs/ContactsApi.md#addContactToGroup) | **POST** /groups/{groupId}/contacts/{phone} | 
-*PhonebookApi.ContactsApi* | [**createContact**](docs/ContactsApi.md#createContact) | **POST** /contacts | 
-*PhonebookApi.ContactsApi* | [**deleteContact**](docs/ContactsApi.md#deleteContact) | **DELETE** /contacts/{phone} | 
-*PhonebookApi.ContactsApi* | [**fetchContact**](docs/ContactsApi.md#fetchContact) | **GET** /contacts/{phone} | 
-*PhonebookApi.ContactsApi* | [**fetchContactGroups**](docs/ContactsApi.md#fetchContactGroups) | **GET** /contacts/{phone}/groups | 
-*PhonebookApi.ContactsApi* | [**fetchContacts**](docs/ContactsApi.md#fetchContacts) | **GET** /contacts | 
-*PhonebookApi.ContactsApi* | [**removeContactFromGroup**](docs/ContactsApi.md#removeContactFromGroup) | **DELETE** /groups/{groupId}/contacts/{phone} | 
-*PhonebookApi.ContactsApi* | [**updateContact**](docs/ContactsApi.md#updateContact) | **PATCH** /contacts/{phone} | 
-*PhonebookApi.GroupsApi* | [**createGroup**](docs/GroupsApi.md#createGroup) | **POST** /groups | 
-*PhonebookApi.GroupsApi* | [**deleteGroup**](docs/GroupsApi.md#deleteGroup) | **DELETE** /groups/{groupId} | 
-*PhonebookApi.GroupsApi* | [**fetchGroup**](docs/GroupsApi.md#fetchGroup) | **GET** /groups/{groupId} | 
-*PhonebookApi.GroupsApi* | [**fetchGroups**](docs/GroupsApi.md#fetchGroups) | **GET** /groups | 
-*PhonebookApi.GroupsApi* | [**updateGroup**](docs/GroupsApi.md#updateGroup) | **PUT** /groups/{groupId} | 
+*PhonebookApi.BlacklistApi* | [**addToBlacklist**](docs/BlacklistApi.md#addToBlacklist) | **POST** /blacklist |
+*PhonebookApi.BlacklistApi* | [**fetchBlacklist**](docs/BlacklistApi.md#fetchBlacklist) | **GET** /blacklist |
+*PhonebookApi.BlacklistApi* | [**isBlacklisted**](docs/BlacklistApi.md#isBlacklisted) | **GET** /blacklist/{phone} |
+*PhonebookApi.BlacklistApi* | [**removeFromBlacklist**](docs/BlacklistApi.md#removeFromBlacklist) | **DELETE** /blacklist/{phone} |
+*PhonebookApi.ContactsApi* | [**addContactToGroup**](docs/ContactsApi.md#addContactToGroup) | **POST** /groups/{groupId}/contacts/{phone} |
+*PhonebookApi.ContactsApi* | [**createContact**](docs/ContactsApi.md#createContact) | **POST** /contacts |
+*PhonebookApi.ContactsApi* | [**deleteContact**](docs/ContactsApi.md#deleteContact) | **DELETE** /contacts/{phone} |
+*PhonebookApi.ContactsApi* | [**fetchContact**](docs/ContactsApi.md#fetchContact) | **GET** /contacts/{phone} |
+*PhonebookApi.ContactsApi* | [**fetchContactGroups**](docs/ContactsApi.md#fetchContactGroups) | **GET** /contacts/{phone}/groups |
+*PhonebookApi.ContactsApi* | [**fetchContacts**](docs/ContactsApi.md#fetchContacts) | **GET** /contacts |
+*PhonebookApi.ContactsApi* | [**removeContactFromGroup**](docs/ContactsApi.md#removeContactFromGroup) | **DELETE** /groups/{groupId}/contacts/{phone} |
+*PhonebookApi.ContactsApi* | [**updateContact**](docs/ContactsApi.md#updateContact) | **PATCH** /contacts/{phone} |
+*PhonebookApi.GroupsApi* | [**createGroup**](docs/GroupsApi.md#createGroup) | **POST** /groups |
+*PhonebookApi.GroupsApi* | [**deleteGroup**](docs/GroupsApi.md#deleteGroup) | **DELETE** /groups/{groupId} |
+*PhonebookApi.GroupsApi* | [**fetchGroup**](docs/GroupsApi.md#fetchGroup) | **GET** /groups/{groupId} |
+*PhonebookApi.GroupsApi* | [**fetchGroups**](docs/GroupsApi.md#fetchGroups) | **GET** /groups |
+*PhonebookApi.GroupsApi* | [**updateGroup**](docs/GroupsApi.md#updateGroup) | **PUT** /groups/{groupId} |
 
 
 ## Documentation for Models
@@ -147,4 +176,3 @@ Class | Method | HTTP request | Description
 ### basicAuth
 
 - **Type**: HTTP basic authentication
-
