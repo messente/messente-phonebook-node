@@ -17,62 +17,59 @@
 (function(root, factory) {
   if (typeof define === 'function' && define.amd) {
     // AMD. Register as an anonymous module.
-    define(['ApiClient'], factory);
+    define(['ApiClient', 'model/ContactFields'], factory);
   } else if (typeof module === 'object' && module.exports) {
     // CommonJS-like environments that support module.exports, like Node.
-    module.exports = factory(require('../ApiClient'));
+    module.exports = factory(require('../ApiClient'), require('./ContactFields'));
   } else {
     // Browser globals (root is window)
     if (!root.PhonebookApi) {
       root.PhonebookApi = {};
     }
-    root.PhonebookApi.NumberToBlacklist = factory(root.PhonebookApi.ApiClient);
+    root.PhonebookApi.ContactListEnvelope = factory(root.PhonebookApi.ApiClient, root.PhonebookApi.ContactFields);
   }
-}(this, function(ApiClient) {
+}(this, function(ApiClient, ContactFields) {
   'use strict';
 
 
 
   /**
-   * The NumberToBlacklist model module.
-   * @module model/NumberToBlacklist
+   * The ContactListEnvelope model module.
+   * @module model/ContactListEnvelope
    * @version 0.0.4
    */
 
   /**
-   * Constructs a new <code>NumberToBlacklist</code>.
-   * @alias module:model/NumberToBlacklist
+   * Constructs a new <code>ContactListEnvelope</code>.
+   * @alias module:model/ContactListEnvelope
    * @class
-   * @param phoneNumber {String} Phone number in e.164 format
    */
-  var exports = function(phoneNumber) {
+  var exports = function() {
     var _this = this;
 
-    _this['phoneNumber'] = phoneNumber;
   };
 
   /**
-   * Constructs a <code>NumberToBlacklist</code> from a plain JavaScript object, optionally creating a new instance.
+   * Constructs a <code>ContactListEnvelope</code> from a plain JavaScript object, optionally creating a new instance.
    * Copies all relevant properties from <code>data</code> to <code>obj</code> if supplied or a new instance if not.
    * @param {Object} data The plain JavaScript object bearing properties of interest.
-   * @param {module:model/NumberToBlacklist} obj Optional instance to populate.
-   * @return {module:model/NumberToBlacklist} The populated <code>NumberToBlacklist</code> instance.
+   * @param {module:model/ContactListEnvelope} obj Optional instance to populate.
+   * @return {module:model/ContactListEnvelope} The populated <code>ContactListEnvelope</code> instance.
    */
   exports.constructFromObject = function(data, obj) {
     if (data) {
       obj = obj || new exports();
-      if (data.hasOwnProperty('phoneNumber')) {
-        obj['phoneNumber'] = ApiClient.convertToType(data['phoneNumber'], 'String');
+      if (data.hasOwnProperty('contacts')) {
+        obj['contacts'] = ApiClient.convertToType(data['contacts'], [ContactFields]);
       }
     }
     return obj;
   }
 
   /**
-   * Phone number in e.164 format
-   * @member {String} phoneNumber
+   * @member {Array.<module:model/ContactFields>} contacts
    */
-  exports.prototype['phoneNumber'] = undefined;
+  exports.prototype['contacts'] = undefined;
 
 
 

@@ -1,0 +1,17 @@
+# PhonebookApi.ContactFields
+
+## Properties
+Name | Type | Description | Notes
+------------ | ------------- | ------------- | -------------
+**phoneNumber** | **String** | Phone number in e.164 format | 
+**email** | **String** |  | [optional] 
+**firstName** | **String** |  | [optional] 
+**lastName** | **String** |  | [optional] 
+**company** | **Number** |  | [optional] 
+**title** | **String** |  | [optional] 
+**custom** | **String** |  | [optional] 
+**custom2** | **String** |  | [optional] 
+**custom3** | **String** |  | [optional] 
+**custom4** | **String** |  | [optional] 
+
+

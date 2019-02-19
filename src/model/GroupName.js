@@ -26,7 +26,7 @@
     if (!root.PhonebookApi) {
       root.PhonebookApi = {};
     }
-    root.PhonebookApi.NumberToBlacklist = factory(root.PhonebookApi.ApiClient);
+    root.PhonebookApi.GroupName = factory(root.PhonebookApi.ApiClient);
   }
 }(this, function(ApiClient) {
   'use strict';
@@ -34,45 +34,44 @@
 
 
   /**
-   * The NumberToBlacklist model module.
-   * @module model/NumberToBlacklist
+   * The GroupName model module.
+   * @module model/GroupName
    * @version 0.0.4
    */
 
   /**
-   * Constructs a new <code>NumberToBlacklist</code>.
-   * @alias module:model/NumberToBlacklist
+   * Constructs a new <code>GroupName</code>.
+   * @alias module:model/GroupName
    * @class
-   * @param phoneNumber {String} Phone number in e.164 format
+   * @param name {String} 
    */
-  var exports = function(phoneNumber) {
+  var exports = function(name) {
     var _this = this;
 
-    _this['phoneNumber'] = phoneNumber;
+    _this['name'] = name;
   };
 
   /**
-   * Constructs a <code>NumberToBlacklist</code> from a plain JavaScript object, optionally creating a new instance.
+   * Constructs a <code>GroupName</code> from a plain JavaScript object, optionally creating a new instance.
    * Copies all relevant properties from <code>data</code> to <code>obj</code> if supplied or a new instance if not.
    * @param {Object} data The plain JavaScript object bearing properties of interest.
-   * @param {module:model/NumberToBlacklist} obj Optional instance to populate.
-   * @return {module:model/NumberToBlacklist} The populated <code>NumberToBlacklist</code> instance.
+   * @param {module:model/GroupName} obj Optional instance to populate.
+   * @return {module:model/GroupName} The populated <code>GroupName</code> instance.
    */
   exports.constructFromObject = function(data, obj) {
     if (data) {
       obj = obj || new exports();
-      if (data.hasOwnProperty('phoneNumber')) {
-        obj['phoneNumber'] = ApiClient.convertToType(data['phoneNumber'], 'String');
+      if (data.hasOwnProperty('name')) {
+        obj['name'] = ApiClient.convertToType(data['name'], 'String');
       }
     }
     return obj;
   }
 
   /**
-   * Phone number in e.164 format
-   * @member {String} phoneNumber
+   * @member {String} name
    */
-  exports.prototype['phoneNumber'] = undefined;
+  exports.prototype['name'] = undefined;
 
 
 

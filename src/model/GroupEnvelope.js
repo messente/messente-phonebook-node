@@ -17,62 +17,59 @@
 (function(root, factory) {
   if (typeof define === 'function' && define.amd) {
     // AMD. Register as an anonymous module.
-    define(['ApiClient'], factory);
+    define(['ApiClient', 'model/GroupResponseFields'], factory);
   } else if (typeof module === 'object' && module.exports) {
     // CommonJS-like environments that support module.exports, like Node.
-    module.exports = factory(require('../ApiClient'));
+    module.exports = factory(require('../ApiClient'), require('./GroupResponseFields'));
   } else {
     // Browser globals (root is window)
     if (!root.PhonebookApi) {
       root.PhonebookApi = {};
     }
-    root.PhonebookApi.NumberToBlacklist = factory(root.PhonebookApi.ApiClient);
+    root.PhonebookApi.GroupEnvelope = factory(root.PhonebookApi.ApiClient, root.PhonebookApi.GroupResponseFields);
   }
-}(this, function(ApiClient) {
+}(this, function(ApiClient, GroupResponseFields) {
   'use strict';
 
 
 
   /**
-   * The NumberToBlacklist model module.
-   * @module model/NumberToBlacklist
+   * The GroupEnvelope model module.
+   * @module model/GroupEnvelope
    * @version 0.0.4
    */
 
   /**
-   * Constructs a new <code>NumberToBlacklist</code>.
-   * @alias module:model/NumberToBlacklist
+   * Constructs a new <code>GroupEnvelope</code>.
+   * @alias module:model/GroupEnvelope
    * @class
-   * @param phoneNumber {String} Phone number in e.164 format
    */
-  var exports = function(phoneNumber) {
+  var exports = function() {
     var _this = this;
 
-    _this['phoneNumber'] = phoneNumber;
   };
 
   /**
-   * Constructs a <code>NumberToBlacklist</code> from a plain JavaScript object, optionally creating a new instance.
+   * Constructs a <code>GroupEnvelope</code> from a plain JavaScript object, optionally creating a new instance.
    * Copies all relevant properties from <code>data</code> to <code>obj</code> if supplied or a new instance if not.
    * @param {Object} data The plain JavaScript object bearing properties of interest.
-   * @param {module:model/NumberToBlacklist} obj Optional instance to populate.
-   * @return {module:model/NumberToBlacklist} The populated <code>NumberToBlacklist</code> instance.
+   * @param {module:model/GroupEnvelope} obj Optional instance to populate.
+   * @return {module:model/GroupEnvelope} The populated <code>GroupEnvelope</code> instance.
    */
   exports.constructFromObject = function(data, obj) {
     if (data) {
       obj = obj || new exports();
-      if (data.hasOwnProperty('phoneNumber')) {
-        obj['phoneNumber'] = ApiClient.convertToType(data['phoneNumber'], 'String');
+      if (data.hasOwnProperty('group')) {
+        obj['group'] = GroupResponseFields.constructFromObject(data['group']);
       }
     }
     return obj;
   }
 
   /**
-   * Phone number in e.164 format
-   * @member {String} phoneNumber
+   * @member {module:model/GroupResponseFields} group
    */
-  exports.prototype['phoneNumber'] = undefined;
+  exports.prototype['group'] = undefined;
 
 
 

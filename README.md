@@ -99,26 +99,52 @@ api.fetchBlacklist(callback);
 
 ## Documentation for API Endpoints
 
-All URIs are relative to *<https://api.messente.com/v1>*
+All URIs are relative to *https://api.messente.com/v1/phonebook*
 
-Class | Method | HTTP request |
------------- | ------------- | ------------- |
-*PhonebookApi.BlacklistApi* | [**addToBlacklist**](docs/BlacklistApi.md#addToBlacklist) | **POST** /phonebook/blacklist |
-*PhonebookApi.BlacklistApi* | [**fetchBlacklist**](docs/BlacklistApi.md#fetchBlacklist) | **GET** /phonebook/blacklist |
-*PhonebookApi.BlacklistApi* | [**isBlacklisted**](docs/BlacklistApi.md#isBlacklisted) | **GET** /phonebook/blacklist/{phone_number} |
-*PhonebookApi.BlacklistApi* | [**removeFromBlacklist**](docs/BlacklistApi.md#removeFromBlacklist) | **DELETE** /phonebook/blacklist/{phone_number} |
+Class | Method | HTTP request | Description
+------------ | ------------- | ------------- | -------------
+*PhonebookApi.BlacklistApi* | [**addToBlacklist**](docs/BlacklistApi.md#addToBlacklist) | **POST** /blacklist | 
+*PhonebookApi.BlacklistApi* | [**fetchBlacklist**](docs/BlacklistApi.md#fetchBlacklist) | **GET** /blacklist | 
+*PhonebookApi.BlacklistApi* | [**isBlacklisted**](docs/BlacklistApi.md#isBlacklisted) | **GET** /blacklist/{phone} | 
+*PhonebookApi.BlacklistApi* | [**removeFromBlacklist**](docs/BlacklistApi.md#removeFromBlacklist) | **DELETE** /blacklist/{phone} | 
+*PhonebookApi.ContactsApi* | [**addContactToGroup**](docs/ContactsApi.md#addContactToGroup) | **POST** /groups/{groupId}/contacts/{phone} | 
+*PhonebookApi.ContactsApi* | [**createContact**](docs/ContactsApi.md#createContact) | **POST** /contacts | 
+*PhonebookApi.ContactsApi* | [**deleteContact**](docs/ContactsApi.md#deleteContact) | **DELETE** /contacts/{phone} | 
+*PhonebookApi.ContactsApi* | [**fetchContact**](docs/ContactsApi.md#fetchContact) | **GET** /contacts/{phone} | 
+*PhonebookApi.ContactsApi* | [**fetchContactGroups**](docs/ContactsApi.md#fetchContactGroups) | **GET** /contacts/{phone}/groups | 
+*PhonebookApi.ContactsApi* | [**fetchContacts**](docs/ContactsApi.md#fetchContacts) | **GET** /contacts | 
+*PhonebookApi.ContactsApi* | [**removeContactFromGroup**](docs/ContactsApi.md#removeContactFromGroup) | **DELETE** /groups/{groupId}/contacts/{phone} | 
+*PhonebookApi.ContactsApi* | [**updateContact**](docs/ContactsApi.md#updateContact) | **PATCH** /contacts/{phone} | 
+*PhonebookApi.GroupsApi* | [**createGroup**](docs/GroupsApi.md#createGroup) | **POST** /groups | 
+*PhonebookApi.GroupsApi* | [**deleteGroup**](docs/GroupsApi.md#deleteGroup) | **DELETE** /groups/{groupId} | 
+*PhonebookApi.GroupsApi* | [**fetchGroup**](docs/GroupsApi.md#fetchGroup) | **GET** /groups/{groupId} | 
+*PhonebookApi.GroupsApi* | [**fetchGroups**](docs/GroupsApi.md#fetchGroups) | **GET** /groups | 
+*PhonebookApi.GroupsApi* | [**updateGroup**](docs/GroupsApi.md#updateGroup) | **PUT** /groups/{groupId} | 
+
 
 ## Documentation for Models
 
-- [PhonebookApi.ErrorItem](docs/ErrorItem.md)
-- [PhonebookApi.ErrorResponse](docs/ErrorResponse.md)
-- [PhonebookApi.FetchBlacklistSuccess](docs/FetchBlacklistSuccess.md)
-- [PhonebookApi.NumberToBlacklist](docs/NumberToBlacklist.md)
-- [PhonebookApi.ResponseErrorCode](docs/ResponseErrorCode.md)
-- [PhonebookApi.ResponseErrorTitle](docs/ResponseErrorTitle.md)
+ - [PhonebookApi.ContactEnvelope](docs/ContactEnvelope.md)
+ - [PhonebookApi.ContactFields](docs/ContactFields.md)
+ - [PhonebookApi.ContactListEnvelope](docs/ContactListEnvelope.md)
+ - [PhonebookApi.ContactUpdateFields](docs/ContactUpdateFields.md)
+ - [PhonebookApi.EmptyObject](docs/EmptyObject.md)
+ - [PhonebookApi.ErrorItem](docs/ErrorItem.md)
+ - [PhonebookApi.ErrorResponse](docs/ErrorResponse.md)
+ - [PhonebookApi.FetchBlacklistSuccess](docs/FetchBlacklistSuccess.md)
+ - [PhonebookApi.GroupEnvelope](docs/GroupEnvelope.md)
+ - [PhonebookApi.GroupListEnvelope](docs/GroupListEnvelope.md)
+ - [PhonebookApi.GroupName](docs/GroupName.md)
+ - [PhonebookApi.GroupResponseFields](docs/GroupResponseFields.md)
+ - [PhonebookApi.NumberToBlacklist](docs/NumberToBlacklist.md)
+ - [PhonebookApi.ResponseErrorCode](docs/ResponseErrorCode.md)
+ - [PhonebookApi.ResponseErrorTitle](docs/ResponseErrorTitle.md)
+
 
 ## Documentation for Authorization
+
 
 ### basicAuth
 
 - **Type**: HTTP basic authentication
+
