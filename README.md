@@ -124,6 +124,19 @@ const callback = function(error, data, response) {
 // contacts.fetchContacts({}, callback);
 // contacts.fetchContacts({groupIds: ['SOME_GROUP_UUID', 'SOME_OTHER_GROUP_UUID']}, callback);
 // contacts.removeContactFromGroup('SOME_GROUP_UUID', 'SOME_PHONE', callback);
+// contacts.updateContact(
+//   'SOME_PHONE',
+//   {
+//     email: 'SOME NEW EMAIL',
+//     firstName: 'SOME NEW FIRST NAME',
+//     lastName: 'SOME NEW LAST NAME',
+//     company: 'SOME NEW COMPANY',
+//     title: 'SOME NEW TITLE',
+//     custom: 'SOME NEW CUSTOM',
+//     custom2: 'SOME NEW CUSTOM2',
+//     custom3: 'SOME NEW CUSTOM3',
+//     custom4: 'SOME NEW CUSTOM4'
+// }, callback);
 ```
 
 ## Documentation for API Endpoints
