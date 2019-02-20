@@ -96,7 +96,7 @@ const callback = function(error, data, response) {
 // blacklist.addToBlacklist({phoneNumber: 'SOME_PHONE'}, callback);
 // blacklist.fetchBlacklist(callback);
 // blacklist.isBlacklisted('SOME_PHONE', callback);
-// blacklist.removeFromBlacklist('SOME_PHONE', callback);
+// blacklist.deleteFromBlacklist('SOME_PHONE', callback);
 
 // groups.createGroup({'name': 'SOME_NAME'}, callback);
 // groups.deleteGroup('SOME_GROUP_UUID', callback);
@@ -146,9 +146,9 @@ All URIs are relative to *https://api.messente.com/v1/phonebook*
 Class | Method | HTTP request | Description
 ------------ | ------------- | ------------- | -------------
 *PhonebookApi.BlacklistApi* | [**addToBlacklist**](docs/BlacklistApi.md#addToBlacklist) | **POST** /blacklist |
+*PhonebookApi.BlacklistApi* | [**deleteFromBlacklist**](docs/BlacklistApi.md#deleteFromBlacklist) | **DELETE** /blacklist/{phone} |
 *PhonebookApi.BlacklistApi* | [**fetchBlacklist**](docs/BlacklistApi.md#fetchBlacklist) | **GET** /blacklist |
 *PhonebookApi.BlacklistApi* | [**isBlacklisted**](docs/BlacklistApi.md#isBlacklisted) | **GET** /blacklist/{phone} |
-*PhonebookApi.BlacklistApi* | [**removeFromBlacklist**](docs/BlacklistApi.md#removeFromBlacklist) | **DELETE** /blacklist/{phone} |
 *PhonebookApi.ContactsApi* | [**addContactToGroup**](docs/ContactsApi.md#addContactToGroup) | **POST** /groups/{groupId}/contacts/{phone} |
 *PhonebookApi.ContactsApi* | [**createContact**](docs/ContactsApi.md#createContact) | **POST** /contacts |
 *PhonebookApi.ContactsApi* | [**deleteContact**](docs/ContactsApi.md#deleteContact) | **DELETE** /contacts/{phone} |

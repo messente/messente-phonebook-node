@@ -94,6 +94,52 @@
     }
 
     /**
+     * Callback function to receive the result of the deleteFromBlacklist operation.
+     * @callback module:api/BlacklistApi~deleteFromBlacklistCallback
+     * @param {String} error Error message, if any.
+     * @param data This operation does not return a value.
+     * @param {String} response The complete HTTP response.
+     */
+
+    /**
+     * Deletes a phone number from the blacklist.
+     * @param {String} phone A phone number
+     * @param {module:api/BlacklistApi~deleteFromBlacklistCallback} callback The callback function, accepting three arguments: error, data, response
+     */
+    this.deleteFromBlacklist = function(phone, callback) {
+      var postBody = null;
+
+      // verify the required parameter 'phone' is set
+      if (phone === undefined || phone === null) {
+        throw new Error("Missing the required parameter 'phone' when calling deleteFromBlacklist");
+      }
+
+
+      var pathParams = {
+        'phone': phone
+      };
+      var queryParams = {
+      };
+      var collectionQueryParams = {
+      };
+      var headerParams = {
+      };
+      var formParams = {
+      };
+
+      var authNames = ['basicAuth'];
+      var contentTypes = [];
+      var accepts = ['application/json'];
+      var returnType = null;
+
+      return this.apiClient.callApi(
+        '/blacklist/{phone}', 'DELETE',
+        pathParams, queryParams, collectionQueryParams, headerParams, formParams, postBody,
+        authNames, contentTypes, accepts, returnType, callback
+      );
+    }
+
+    /**
      * Callback function to receive the result of the fetchBlacklist operation.
      * @callback module:api/BlacklistApi~fetchBlacklistCallback
      * @param {String} error Error message, if any.
@@ -174,52 +220,6 @@
 
       return this.apiClient.callApi(
         '/blacklist/{phone}', 'GET',
-        pathParams, queryParams, collectionQueryParams, headerParams, formParams, postBody,
-        authNames, contentTypes, accepts, returnType, callback
-      );
-    }
-
-    /**
-     * Callback function to receive the result of the removeFromBlacklist operation.
-     * @callback module:api/BlacklistApi~removeFromBlacklistCallback
-     * @param {String} error Error message, if any.
-     * @param data This operation does not return a value.
-     * @param {String} response The complete HTTP response.
-     */
-
-    /**
-     * Removes a phone number from the blacklist.
-     * @param {String} phone A phone number
-     * @param {module:api/BlacklistApi~removeFromBlacklistCallback} callback The callback function, accepting three arguments: error, data, response
-     */
-    this.removeFromBlacklist = function(phone, callback) {
-      var postBody = null;
-
-      // verify the required parameter 'phone' is set
-      if (phone === undefined || phone === null) {
-        throw new Error("Missing the required parameter 'phone' when calling removeFromBlacklist");
-      }
-
-
-      var pathParams = {
-        'phone': phone
-      };
-      var queryParams = {
-      };
-      var collectionQueryParams = {
-      };
-      var headerParams = {
-      };
-      var formParams = {
-      };
-
-      var authNames = ['basicAuth'];
-      var contentTypes = [];
-      var accepts = ['application/json'];
-      var returnType = null;
-
-      return this.apiClient.callApi(
-        '/blacklist/{phone}', 'DELETE',
         pathParams, queryParams, collectionQueryParams, headerParams, formParams, postBody,
         authNames, contentTypes, accepts, returnType, callback
       );
